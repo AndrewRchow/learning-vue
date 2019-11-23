@@ -11,6 +11,15 @@
 <body>
     <div id="example" class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">asdasda</div>
     <div id="example2" v-bind:class="classObject">aaaa</div>
+
+    <div id="example3" v-bind:class="[activeClass, errorClass, {testClass: isTest}]">
+        Array syntax
+    </div>
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="./index.js"></script>
 </body>
