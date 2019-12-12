@@ -11,9 +11,63 @@
 <body>
     <div id="example">
         <p v-if="awesome">Vue is awesome!</p>
-        <p v-elsse>Oh no</p>
+        <p v-else>Oh no</p>
+
+        <ul>
+            <template v-if="something">
+                <li>Text</li>
+                <li>Text</li>
+            </template>
+            <template v-else-if="awesome==='AAA'">
+                <li>Text2</li>
+                <li>Text2</li>
+            </template>
+            <template v-else>
+                <li>Text3</li>
+                <li>Text3</li>
+            </template>
+        </ul>
     </div>
 
+    <div id="example2">
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+
+    <div id="example3">
+        <!-- Reuses the input, so text does not clear -->
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <button v-on:click="swap">swap</button>
+
+
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="email-input">
+        </template>
+        <button v-on:click="swap">swap</button>
+
+    </div>
 
 
 
